@@ -19,3 +19,7 @@ The Dashboard that displays highscores is [available on this repository](https:/
 ## Play and downlaod form itch.io
 
 The Game can be found on itch.io at [https://ahmedmaawy.itch.io/mega-craet-box](https://ahmedmaawy.itch.io/mega-craet-box)
+
+## Godot Version
+
+* Godot 3.5
