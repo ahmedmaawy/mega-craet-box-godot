@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/menus/stages_sprite.gd" type="Script" id=1]
+[ext_resource path="res://assets/shots/stage_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/shots/stage_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/shots/stage_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/prev.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/next.png" type="Texture" id=6]
+[ext_resource path="res://ui/menus/stages_menu.gd" type="Script" id=7]
+[ext_resource path="res://res/menu_gui_theme.tres" type="Theme" id=8]
+[ext_resource path="res://assets/ui/locked.png" type="Texture" id=9]
+[ext_resource path="res://res/player_message_theme.tres" type="Theme" id=10]
+
+[node name="Stages" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 500, 400 )
+texture = ExtResource( 4 )
+script = ExtResource( 1 )
+stage_1_texture = ExtResource( 4 )
+stage_2_texture = ExtResource( 3 )
+stage_3_texture = ExtResource( 2 )
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2( 0, 50 )
+
+[node name="PrevButton" type="TextureButton" parent="Buttons"]
+margin_left = 100.0
+margin_top = 280.0
+margin_right = 210.0
+margin_bottom = 396.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="TextureButton" parent="Buttons"]
+margin_left = 800.0
+margin_top = 280.0
+margin_right = 910.0
+margin_bottom = 396.0
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 140.0
+margin_right = 1023.0
+margin_bottom = 207.0
+color = Color( 0, 0, 0, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StageLabel" type="Label" parent="."]
+margin_top = 150.0
+margin_right = 1023.0
+margin_bottom = 204.0
+theme = ExtResource( 8 )
+text = "Stage 1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LockedIcon" type="Sprite" parent="."]
+position = Vector2( 500, 400 )
+texture = ExtResource( 9 )
+
+[node name="ScreenText" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 610.0
+margin_right = 998.0
+margin_bottom = 727.0
+theme = ExtResource( 10 )
+text = "Text"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Buttons/PrevButton" to="." method="_on_PrevButton_pressed"]
+[connection signal="pressed" from="Buttons/NextButton" to="." method="_on_NextButton_pressed"]

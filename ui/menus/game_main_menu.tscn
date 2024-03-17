@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/menus/game_menu.tscn" type="PackedScene" id=2]
+
+[node name="GameMenu" type="Node2D"]
+
+[node name="GameMenu" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 250 )
+menu_items = [ "Start Game", "Settings", "Tutorial", "Unlocks", "Exit Game" ]

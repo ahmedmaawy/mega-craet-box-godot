@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/hero/knight_idle_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://player/player_rigid.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 28.7655
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+mass = 10.0
+gravity_scale = 15.0
+script = ExtResource( 2 )
+torque = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 3.40312, 0, 10.5574, 15.375 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

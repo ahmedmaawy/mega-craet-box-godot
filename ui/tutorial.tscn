@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://res/menu_gui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/shots/tutorial_shot.png" type="Texture" id=2]
+[ext_resource path="res://res/player_message_theme.tres" type="Theme" id=3]
+[ext_resource path="res://ui/tutorial.gd" type="Script" id=4]
+[ext_resource path="res://ui/tutorial_texture_rect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ui/prev.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/next.png" type="Texture" id=8]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 500, 442 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2( 0, 50 )
+
+[node name="PrevButton" type="TextureButton" parent="Buttons"]
+margin_left = 80.0
+margin_top = 312.0
+margin_right = 190.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="TextureButton" parent="Buttons"]
+margin_left = 820.0
+margin_top = 312.0
+margin_right = 930.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Title"]
+margin_top = 132.0
+margin_right = 1023.0
+margin_bottom = 199.0
+color = Color( 0, 0, 0, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Title"]
+margin_top = 142.0
+margin_right = 1023.0
+margin_bottom = 196.0
+theme = ExtResource( 1 )
+text = "Title"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenText" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 674.0
+margin_right = 998.0
+margin_bottom = 791.0
+theme = ExtResource( 3 )
+text = "Title"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rects" type="Node2D" parent="."]
+position = Vector2( 0, 30 )
+
+[node name="CrateRect" parent="Rects" instance=ExtResource( 5 )]
+visible = false
+margin_left = 325.0
+margin_top = 375.0
+margin_right = 365.0
+margin_bottom = 415.0
+
+[node name="PlayerRect" parent="Rects" instance=ExtResource( 5 )]
+visible = false
+margin_left = 635.0
+margin_top = 465.0
+margin_right = 677.0
+margin_bottom = 503.0
+
+[node name="EnemyRect" parent="Rects" instance=ExtResource( 5 )]
+visible = false
+margin_left = 540.0
+margin_right = 581.0
+margin_bottom = 291.0
+
+[node name="FireEnemyRect" parent="Rects" instance=ExtResource( 5 )]
+visible = false
+margin_left = 340.0
+margin_top = 485.0
+margin_right = 380.0
+margin_bottom = 526.0
+
+[connection signal="pressed" from="Buttons/PrevButton" to="." method="_on_PrevButton_pressed"]
+[connection signal="pressed" from="Buttons/NextButton" to="." method="_on_NextButton_pressed"]

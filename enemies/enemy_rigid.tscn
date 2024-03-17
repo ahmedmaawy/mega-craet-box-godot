@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/enemies/fly_anim_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/enemies/goblin_idle_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://enemies/enemy_rigid.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.1868
+
+[node name="Enemy" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+mass = 10.0
+gravity_scale = 20.0
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="BirdSprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 3.40312, 0, 10.5574, 15.375 )
+
+[node name="GoblinSprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1.17555, 0, 14.2222, 15.375 )
+
+[node name="GoblinSmallSprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1.17555, 0, 14.2222, 15.375 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://res/score_gui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/menus/game_menu.tscn" type="PackedScene" id=3]
+
+[node name="Difficulty" type="Node2D"]
+
+[node name="DifficultyLabel" type="Label" parent="."]
+margin_top = 250.0
+margin_right = 1021.0
+margin_bottom = 304.0
+theme = ExtResource( 1 )
+text = "Difficulty"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyMenu" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 350 )
+menu_items = [ "Easy", "Medium", "Hard" ]

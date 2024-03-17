@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://weapons/katana.gd" type="Script" id=1]
+[ext_resource path="res://assets/guns/62.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34, 47 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33, 47 )
+
+[node name="Katana" type="Node2D"]
+script = ExtResource( 1 )
+is_centered = true
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -20 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AreaFront" type="Area2D" parent="."]
+position = Vector2( 30, -10 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaFront"]
+shape = SubResource( 1 )
+
+[node name="AreaBack" type="Area2D" parent="."]
+position = Vector2( -30, -10 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBack"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="AreaFront" to="." method="_on_AreaFront_body_entered"]
+[connection signal="body_exited" from="AreaFront" to="." method="_on_AreaFront_body_exited"]
+[connection signal="body_entered" from="AreaBack" to="." method="_on_AreaBack_body_entered"]
+[connection signal="body_exited" from="AreaBack" to="." method="_on_AreaBack_body_exited"]
