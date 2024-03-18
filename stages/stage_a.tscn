@@ -24,9 +24,7 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 7, 14, 0, 65544, 13, 0, 131074, 13, 0, 131084, 14, 0, 131085, 13, 0, 262145, 14, 0, 327686, 12, 0, 458760, 14, 0, 524301, 13, 0, 524302, 13, 0, 589826, 14, 0, 655373, 12, 0 )
 
-[node name="LevelTileMap" type="TileMap" parent="." groups=[
-"foreground",
-]]
+[node name="LevelTileMap" type="TileMap" parent="." groups=["foreground"]]
 scale = Vector2( 4, 4 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )

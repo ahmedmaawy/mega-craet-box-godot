@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/guns/41.png" type="Texture" id=1]
 [ext_resource path="res://weapons/disk_gun.gd" type="Script" id=2]
 
-[node name="Bazooka" type="Node2D"]
+[node name="DiskGun" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Texture" type="Sprite" parent="."]
@@ -11,4 +11,4 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
 [node name="SpawnPosition" type="Position2D" parent="."]
-position = Vector2( 15, 0 )
+position = Vector2( 50, 0 )

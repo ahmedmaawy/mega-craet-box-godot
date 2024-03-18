@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/guns/19.png" type="Texture" id=1]
 [ext_resource path="res://weapons/grenade_launcher.gd" type="Script" id=2]
 
-[node name="Bazooka" type="Node2D"]
+[node name="GrenadeLauncher" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Texture" type="Sprite" parent="."]
